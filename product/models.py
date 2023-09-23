@@ -24,3 +24,12 @@ class ProductModel(models.Model):
 
     class Meta:
         db_table = "product"
+
+
+class HelloModal(models.Model):
+    product_id = models.CharField(primary_key=True, default=get_uuid, max_length=250)
+
+    category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = "product"
